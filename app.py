@@ -117,6 +117,7 @@ role_category = st.selectbox(
 skill_domain = st.selectbox(
     "Skill Domain",
     [
+        "AI/ML/DL",
         "Business Intelligence",
         "Cloud & DevOps",
         "Data Engineering",
@@ -227,4 +228,6 @@ if st.button("Predict Work Mode"):
     })
 
     st.dataframe(prob_df, use_container_width=True)
-    st.bar_chart(prob_df.set_index("Work Mode"))
+
+    chart_data = prob_df.set_index("Work Mode")[["Probability (%)"]]
+    st.bar_chart(chart_data)

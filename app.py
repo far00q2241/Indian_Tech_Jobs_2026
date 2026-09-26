@@ -7,6 +7,7 @@ import joblib
 # -------------------------------
 model = joblib.load("work_mode_xgboost_model.pkl")
 label_encoder = joblib.load("work_mode_label_encoder.pkl")
+feature_columns = joblib.load("feature_columns.pkl")
 
 st.set_page_config(page_title="Work Mode Prediction", page_icon="💼")
 

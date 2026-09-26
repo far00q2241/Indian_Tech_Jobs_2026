@@ -217,13 +217,13 @@ if st.button("Predict Work Mode"):
 
     result = label_encoder.inverse_transform(prediction)[0]
 
-    st.success(f"### Predicted Work Mode: {result}")
+    st.success(f"🎯 Predicted Work Mode: **{result}**")
 
     st.subheader("Prediction Probability")
 
     prob_df = pd.DataFrame({
         "Work Mode": label_encoder.classes_,
-        "Probability": probability[0]
+        "Probability (%)": (probability[0] * 100).round(2)
     })
 
     st.dataframe(prob_df, use_container_width=True)

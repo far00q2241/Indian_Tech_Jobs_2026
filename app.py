@@ -31,8 +31,12 @@ salary_raw = st.number_input(
     "Minimum Salary (LPA)", 0.0, 50.0, 6.0
 )
 
-company_rating = st.slider(
-    "Company Rating", 0.0, 5.0, 3.5, 0.1
+company_rating = st.number_input(
+    "Company Rating",
+    min_value=0.0,
+    max_value=5.0,
+    value=3.5,
+    step=0.1
 )
 
 skills_count = st.number_input(
